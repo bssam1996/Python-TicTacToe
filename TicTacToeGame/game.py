@@ -9,7 +9,14 @@ class TicTacToe:
         self.current_winner = None  # keep tracking of the winner
 
     def print_board(self):
-        for row in [self.board[i*3:(i+1)*3] for i in range(3)]:
+        board2 = []
+        for i in range(9):
+            if self.board[i] != ' ':
+                board2.append(self.board[i])
+            else:
+                board2.append(str(i))
+        # for row in [self.board[i*3:(i+1)*3] for i in range(3)]:
+        for row in [board2[i*3:(i+1)*3] for i in range(3)]:
             print("| " + " | ".join(row) + " |")
 
     @staticmethod
